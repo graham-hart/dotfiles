@@ -1,0 +1,26 @@
+[character]
+success_symbol="[>](bold green)"
+error_symbol="[>](bold red)"
+
+[directory]
+format="""[$path](bold cyan)"""
+truncate_to_repo=false
+truncation_symbol=".../"
+
+[java]
+disabled=true
+
+[git_branch]
+disabled=true
+
+[git_commit]
+disabled=true
+
+[git_state]
+disabled=true
+
+[git_status]
+disabled=true
+
+[python]
+format="[Python $version $virtualenv](bold green)"

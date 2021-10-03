@@ -1,0 +1,81 @@
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/polybar/polybar
+;
+;   The README contains a lot of information
+;
+;==========================================================
+[colors]
+bar-background=#5262A4
+module-background=#6a75bb
+;#534392
+;#ce898c
+;#834f88
+;#6a75bb
+;#79a6c8
+;#5263a4
+;#c43275
+white=#f9f9f9
+
+
+[bar/mybar]
+width=99%
+height=25
+bottom=true
+offset-y=5
+offset-x=0.5%
+background=${colors.bar-background}
+modules-right=spotify date
+modules-center=time
+modules-left=xwindow
+font-0="FiraCode Nerd Font:size=8:weight=bold;2"
+font-1="JetBrainsMono Nerd Font:size=15;3"
+radius-top=12.0
+radius-bottom=12.0
+
+[module/time]
+type=internal/date
+interval=1.0
+time=%H:%M:%S
+label=%time%
+format-foreground=${colors.white}
+format-padding=4
+; format-background=${colors.module-background}
+
+[module/date]
+type=internal/date
+interval=5.0
+date=%Y.%m.%d%
+label=%date%
+format-foreground=${colors.white}
+; format-background=${colors.module-background}
+format-padding=4
+
+[module/xwindow]
+type=internal/xwindow
+format-padding=2
+format-foreground=${colors.white}
+; format-background=${colors.module-background}
+
+[module/spotify]
+type = custom/script
+exec = ~/.config/polybar/spotify.sh %artist% - %title% - %album%
+tail = true
+; format-background=${colors.module-background}
+interval = 2
+format-padding=5
+
+[module/sep]
+type = custom/text
+content = " "
+padding=5
