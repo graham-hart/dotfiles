@@ -9,6 +9,9 @@
                 "folderUri": "file:///home/graham/.config/bspwm"
             },
             {
+                "fileUri": "file:///home/graham/.ssh/id_rsa.pub"
+            },
+            {
                 "fileUri": "file:///home/graham/.bashrc"
             },
             {
@@ -78,6 +81,7 @@
                                     "id": "openRecentFolder",
                                     "uri": {
                                         "$mid": 1,
+                                        "fsPath": "/home/graham/.config",
                                         "external": "file:///home/graham/.config",
                                         "path": "/home/graham/.config",
                                         "scheme": "file"
@@ -98,6 +102,17 @@
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
+                                },
+                                {
+                                    "id": "openRecentFile",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "external": "file:///home/graham/.ssh/id_rsa.pub",
+                                        "path": "/home/graham/.ssh/id_rsa.pub",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/.ssh/id_rsa.pub"
                                 },
                                 {
                                     "id": "openRecentFile",
@@ -311,6 +326,10 @@
                         "label": "&&Close Editor"
                     },
                     {
+                        "id": "workbench.action.closeFolder",
+                        "label": "Close &&Folder"
+                    },
+                    {
                         "id": "workbench.action.closeWindow",
                         "label": "Clos&&e Window"
                     },
@@ -504,7 +523,8 @@
                                 },
                                 {
                                     "id": "workbench.action.toggleSidebarVisibility",
-                                    "label": "Show &&Side Bar"
+                                    "label": "Show &&Side Bar",
+                                    "checked": true
                                 },
                                 {
                                     "id": "workbench.action.toggleStatusbarVisibility",
@@ -518,7 +538,8 @@
                                 },
                                 {
                                     "id": "workbench.action.togglePanel",
-                                    "label": "Show &&Panel"
+                                    "label": "Show &&Panel",
+                                    "checked": true
                                 },
                                 {
                                     "id": "workbench.action.toggleEditorVisibility",
@@ -698,8 +719,7 @@
                 "items": [
                     {
                         "id": "workbench.action.navigateBack",
-                        "label": "&&Back",
-                        "enabled": false
+                        "label": "&&Back"
                     },
                     {
                         "id": "workbench.action.navigateForward",
@@ -1020,8 +1040,7 @@
                     },
                     {
                         "id": "workbench.action.terminal.split",
-                        "label": "&&Split Terminal",
-                        "enabled": false
+                        "label": "&&Split Terminal"
                     },
                     {
                         "id": "vscode.menubar.separator"
@@ -1201,6 +1220,11 @@
             "workbench.action.closeActiveEditor": {
                 "label": "Ctrl+W",
                 "userSettingsLabel": "ctrl+w"
+            },
+            "workbench.action.closeFolder": {
+                "label": "Ctrl+K F",
+                "isNative": false,
+                "userSettingsLabel": "ctrl+k f"
             },
             "workbench.action.closeWindow": {
                 "label": "Alt+F4",
@@ -1582,20 +1606,21 @@
             "editorPartMinWidth": 220,
             "titleBarHeight": 0,
             "activityBarWidth": 48,
-            "sideBarWidth": 0,
+            "sideBarWidth": 170,
             "statusBarHeight": 22,
             "windowBorder": false
         }
     },
     "windowsState": {
         "lastActiveWindow": {
-            "backupPath": "/home/graham/.config/Code - OSS/Backups/1633219534285",
+            "folder": "file:///home/graham/.config",
+            "backupPath": "/home/graham/.config/Code - OSS/Backups/1ee3284e50233acbf5780c9eabf03b2e",
             "uiState": {
                 "mode": 1,
                 "x": 14,
-                "y": 460,
-                "width": 809,
-                "height": 396
+                "y": 14,
+                "width": 1572,
+                "height": 842
             }
         },
         "openedWindows": []
