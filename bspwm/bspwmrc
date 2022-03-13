@@ -1,24 +1,10 @@
 #! /bin/sh
 
-#RESIZE VM WINDOW (TEMPORARY -- REMOVE WHEN USED AS PERM)
-xrandr -s 1600x900
-
-#SXHKD INIT
-pgrep -x sxhkd > /dev/null
-pkill sxhkd 
-sxhkd &
-
-#POLYBAR
-~/.config/polybar/launch.sh
-
-#NITROGEN
-nitrogen --restore &
-
-#PICOM
-picom -b
-
-#BSP Config
-bspc monitor -d I II III IV V VI VII VIII IX X
+pgrep -x sxhkd > /dev/null || sxhkd &
+xrandr --output eDP-1 --right-of HDMI-1
+bspc monitor -d 6 7 8 9 0
+bspc monitor HDMI-1 -d 2 3 4 5
+nitrogen --restore
 
 bspc config border_width         2
 bspc config window_gap          12
