@@ -4,15 +4,15 @@
 
 # terminal emulator
 super + F12
-	alacritty --working-directory ~
+	alacritty
 
 #vscode
 super + F10
 	code
 
-#firefox
+#brave
 super + F11
-	firefox
+	brave-browser
 
 #spotify
 super + F9
@@ -20,11 +20,32 @@ super + F9
 	
 # program launcher
 super + F1
-	dmenu_run
+	rofi -show drun
 
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
+
+
+#
+# audio
+#
+
+# volume change
+XF86Audio{Raise,Lower}Volume
+	pulsemixer --change-volume {+,-}5
+
+# mute 
+XF86AudioMute
+	pulsemixer --toggle-mute
+
+#toggle
+XF86AudioPlay
+	playerctl play-pause
+
+#navigation
+XF86Audio{Prev,Next}
+	playerctl {prev,next}
 
 #
 # bspwm hotkeys
@@ -33,6 +54,7 @@ super + Escape
 # quit/restart bspwm
 super + alt + {q,r}
 	bspc {quit,wm -r}
+
 
 # close and kill
 super + {_,shift + }w
@@ -53,6 +75,15 @@ super + g
 #
 # state/flags
 #
+
+# minimize
+super + i 
+	hidden=$(bspc query -N -n .hidden -d focused)
+	if [ -z "$hidden" ]; then
+		bspc node focused -g hidden=on
+	else
+		bspc node "$hidden" -g hidden=off
+	fi
 
 # set the window state
 super + {t,shift + t,s,f}
